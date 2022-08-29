@@ -45,14 +45,14 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	"github.com/prometheus-operator/prometheus-operator/pkg/assets"
-	monitoringclient "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned"
-	"github.com/prometheus-operator/prometheus-operator/pkg/informers"
-	"github.com/prometheus-operator/prometheus-operator/pkg/k8sutil"
-	"github.com/prometheus-operator/prometheus-operator/pkg/listwatch"
-	"github.com/prometheus-operator/prometheus-operator/pkg/operator"
-	"github.com/prometheus-operator/prometheus-operator/pkg/webconfig"
+	monitoringv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	"github.com/tremes/prometheus-operator/pkg/assets"
+	monitoringclient "github.com/tremes/prometheus-operator/pkg/client/versioned"
+	"github.com/tremes/prometheus-operator/pkg/informers"
+	"github.com/tremes/prometheus-operator/pkg/k8sutil"
+	"github.com/tremes/prometheus-operator/pkg/listwatch"
+	"github.com/tremes/prometheus-operator/pkg/operator"
+	"github.com/tremes/prometheus-operator/pkg/webconfig"
 )
 
 const (
@@ -1668,7 +1668,7 @@ func (c *Operator) status(ctx context.Context, key string) error {
 	pStatus.Conditions = append(pStatus.Conditions, availableCondition, reconciledCondition)
 
 	p.Status = pStatus
-	if _, err = c.mclient.MonitoringV1().Prometheuses(p.Namespace).UpdateStatus(ctx, p, metav1.UpdateOptions{}); err != nil {
+	if _, err = c.mclient.ObservabilityV1().Prometheuses(p.Namespace).UpdateStatus(ctx, p, metav1.UpdateOptions{}); err != nil {
 		return errors.Wrap(err, "failed to update status subresource")
 	}
 

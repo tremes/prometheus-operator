@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring"
+	"github.com/tremes/prometheus-operator/pkg/apis/monitoring"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -523,10 +523,10 @@ type PrometheusRuleExcludeConfig struct {
 
 // ObjectReference references a PodMonitor, ServiceMonitor, Probe or PrometheusRule object.
 type ObjectReference struct {
-	// Group of the referent. When not specified, it defaults to `monitoring.coreos.com`
+	// Group of the referent. When not specified, it defaults to `observability.redhat.com`
 	// +optional
-	// +kubebuilder:default:="monitoring.coreos.com"
-	// +kubebuilder:validation:Enum=monitoring.coreos.com
+	// +kubebuilder:default:="observability.redhat.com"
+	// +kubebuilder:validation:Enum=observability.redhat.com
 	Group string `json:"group"`
 	// Resource of the referent.
 	// +kubebuilder:validation:Required

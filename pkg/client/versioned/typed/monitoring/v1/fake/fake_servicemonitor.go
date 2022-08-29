@@ -19,7 +19,7 @@ package fake
 import (
 	"context"
 
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
+	monitoringv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -30,13 +30,13 @@ import (
 
 // FakeServiceMonitors implements ServiceMonitorInterface
 type FakeServiceMonitors struct {
-	Fake *FakeMonitoringV1
+	Fake *FakeObservabilityV1
 	ns   string
 }
 
-var servicemonitorsResource = schema.GroupVersionResource{Group: "monitoring.coreos.com", Version: "v1", Resource: "servicemonitors"}
+var servicemonitorsResource = schema.GroupVersionResource{Group: "observability.redhat.com", Version: "v1", Resource: "servicemonitors"}
 
-var servicemonitorsKind = schema.GroupVersionKind{Group: "monitoring.coreos.com", Version: "v1", Kind: "ServiceMonitor"}
+var servicemonitorsKind = schema.GroupVersionKind{Group: "observability.redhat.com", Version: "v1", Kind: "ServiceMonitor"}
 
 // Get takes name of the serviceMonitor, and returns the corresponding serviceMonitor object, and an error if there is any.
 func (c *FakeServiceMonitors) Get(ctx context.Context, name string, options v1.GetOptions) (result *monitoringv1.ServiceMonitor, err error) {

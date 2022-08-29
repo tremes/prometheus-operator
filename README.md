@@ -146,11 +146,11 @@ for n in $(kubectl get namespaces -o jsonpath={..metadata.name}); do
 done
 
 kubectl delete --ignore-not-found customresourcedefinitions \
-  prometheuses.monitoring.coreos.com \
-  servicemonitors.monitoring.coreos.com \
-  podmonitors.monitoring.coreos.com \
-  alertmanagers.monitoring.coreos.com \
-  prometheusrules.monitoring.coreos.com
+  prometheuses.observability.redhat.com \
+  servicemonitors.observability.redhat.com \
+  podmonitors.observability.redhat.com \
+  alertmanagers.observability.redhat.com \
+  prometheusrules.observability.redhat.com
 ```
 
 ## Development

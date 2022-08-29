@@ -24,17 +24,17 @@ import (
 	"time"
 
 	"github.com/blang/semver/v4"
-	"github.com/prometheus-operator/prometheus-operator/pkg/alertmanager/validation"
-	validationv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/alertmanager/validation/v1alpha1"
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	monitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
-	"github.com/prometheus-operator/prometheus-operator/pkg/assets"
-	monitoringclient "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned"
-	"github.com/prometheus-operator/prometheus-operator/pkg/informers"
-	"github.com/prometheus-operator/prometheus-operator/pkg/k8sutil"
-	"github.com/prometheus-operator/prometheus-operator/pkg/listwatch"
-	"github.com/prometheus-operator/prometheus-operator/pkg/operator"
-	"github.com/prometheus-operator/prometheus-operator/pkg/webconfig"
+	"github.com/tremes/prometheus-operator/pkg/alertmanager/validation"
+	validationv1alpha1 "github.com/tremes/prometheus-operator/pkg/alertmanager/validation/v1alpha1"
+	monitoringv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	monitoringv1alpha1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1alpha1"
+	"github.com/tremes/prometheus-operator/pkg/assets"
+	monitoringclient "github.com/tremes/prometheus-operator/pkg/client/versioned"
+	"github.com/tremes/prometheus-operator/pkg/informers"
+	"github.com/tremes/prometheus-operator/pkg/k8sutil"
+	"github.com/tremes/prometheus-operator/pkg/listwatch"
+	"github.com/tremes/prometheus-operator/pkg/operator"
+	"github.com/tremes/prometheus-operator/pkg/webconfig"
 
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
@@ -968,7 +968,7 @@ func (c *Operator) provisionAlertmanagerConfiguration(ctx context.Context, am *m
 
 	if am.Spec.AlertmanagerConfiguration != nil {
 		// Load the base configuration from the referenced AlertmanagerConfig.
-		globalAmConfig, err := c.mclient.MonitoringV1alpha1().AlertmanagerConfigs(am.Namespace).
+		globalAmConfig, err := c.mclient.ObservabilityV1alpha1().AlertmanagerConfigs(am.Namespace).
 			Get(ctx, am.Spec.AlertmanagerConfiguration.Name, metav1.GetOptions{})
 		if err != nil {
 			return errors.Wrap(err, "failed to get global AlertmanagerConfig")

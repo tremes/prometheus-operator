@@ -20,8 +20,8 @@ import (
 	"context"
 	"time"
 
-	v1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	scheme "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/scheme"
+	v1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	scheme "github.com/tremes/prometheus-operator/pkg/client/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -54,7 +54,7 @@ type probes struct {
 }
 
 // newProbes returns a Probes
-func newProbes(c *MonitoringV1Client, namespace string) *probes {
+func newProbes(c *ObservabilityV1Client, namespace string) *probes {
 	return &probes{
 		client: c.RESTClient(),
 		ns:     namespace,

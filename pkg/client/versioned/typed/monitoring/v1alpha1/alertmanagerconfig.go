@@ -20,8 +20,8 @@ import (
 	"context"
 	"time"
 
-	v1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
-	scheme "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/scheme"
+	v1alpha1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1alpha1"
+	scheme "github.com/tremes/prometheus-operator/pkg/client/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -54,7 +54,7 @@ type alertmanagerConfigs struct {
 }
 
 // newAlertmanagerConfigs returns a AlertmanagerConfigs
-func newAlertmanagerConfigs(c *MonitoringV1alpha1Client, namespace string) *alertmanagerConfigs {
+func newAlertmanagerConfigs(c *ObservabilityV1alpha1Client, namespace string) *alertmanagerConfigs {
 	return &alertmanagerConfigs{
 		client: c.RESTClient(),
 		ns:     namespace,

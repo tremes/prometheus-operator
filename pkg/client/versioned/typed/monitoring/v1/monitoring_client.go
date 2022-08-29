@@ -19,12 +19,12 @@ package v1
 import (
 	"net/http"
 
-	v1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	"github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/scheme"
+	v1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	"github.com/tremes/prometheus-operator/pkg/client/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
-type MonitoringV1Interface interface {
+type ObservabilityV1Interface interface {
 	RESTClient() rest.Interface
 	AlertmanagersGetter
 	PodMonitorsGetter
@@ -35,43 +35,43 @@ type MonitoringV1Interface interface {
 	ThanosRulersGetter
 }
 
-// MonitoringV1Client is used to interact with features provided by the monitoring.coreos.com group.
-type MonitoringV1Client struct {
+// ObservabilityV1Client is used to interact with features provided by the observability.redhat.com group.
+type ObservabilityV1Client struct {
 	restClient rest.Interface
 }
 
-func (c *MonitoringV1Client) Alertmanagers(namespace string) AlertmanagerInterface {
+func (c *ObservabilityV1Client) Alertmanagers(namespace string) AlertmanagerInterface {
 	return newAlertmanagers(c, namespace)
 }
 
-func (c *MonitoringV1Client) PodMonitors(namespace string) PodMonitorInterface {
+func (c *ObservabilityV1Client) PodMonitors(namespace string) PodMonitorInterface {
 	return newPodMonitors(c, namespace)
 }
 
-func (c *MonitoringV1Client) Probes(namespace string) ProbeInterface {
+func (c *ObservabilityV1Client) Probes(namespace string) ProbeInterface {
 	return newProbes(c, namespace)
 }
 
-func (c *MonitoringV1Client) Prometheuses(namespace string) PrometheusInterface {
+func (c *ObservabilityV1Client) Prometheuses(namespace string) PrometheusInterface {
 	return newPrometheuses(c, namespace)
 }
 
-func (c *MonitoringV1Client) PrometheusRules(namespace string) PrometheusRuleInterface {
+func (c *ObservabilityV1Client) PrometheusRules(namespace string) PrometheusRuleInterface {
 	return newPrometheusRules(c, namespace)
 }
 
-func (c *MonitoringV1Client) ServiceMonitors(namespace string) ServiceMonitorInterface {
+func (c *ObservabilityV1Client) ServiceMonitors(namespace string) ServiceMonitorInterface {
 	return newServiceMonitors(c, namespace)
 }
 
-func (c *MonitoringV1Client) ThanosRulers(namespace string) ThanosRulerInterface {
+func (c *ObservabilityV1Client) ThanosRulers(namespace string) ThanosRulerInterface {
 	return newThanosRulers(c, namespace)
 }
 
-// NewForConfig creates a new MonitoringV1Client for the given config.
+// NewForConfig creates a new ObservabilityV1Client for the given config.
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
-func NewForConfig(c *rest.Config) (*MonitoringV1Client, error) {
+func NewForConfig(c *rest.Config) (*ObservabilityV1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -83,9 +83,9 @@ func NewForConfig(c *rest.Config) (*MonitoringV1Client, error) {
 	return NewForConfigAndClient(&config, httpClient)
 }
 
-// NewForConfigAndClient creates a new MonitoringV1Client for the given config and http client.
+// NewForConfigAndClient creates a new ObservabilityV1Client for the given config and http client.
 // Note the http client provided takes precedence over the configured transport values.
-func NewForConfigAndClient(c *rest.Config, h *http.Client) (*MonitoringV1Client, error) {
+func NewForConfigAndClient(c *rest.Config, h *http.Client) (*ObservabilityV1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -94,12 +94,12 @@ func NewForConfigAndClient(c *rest.Config, h *http.Client) (*MonitoringV1Client,
 	if err != nil {
 		return nil, err
 	}
-	return &MonitoringV1Client{client}, nil
+	return &ObservabilityV1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new MonitoringV1Client for the given config and
+// NewForConfigOrDie creates a new ObservabilityV1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *MonitoringV1Client {
+func NewForConfigOrDie(c *rest.Config) *ObservabilityV1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -107,9 +107,9 @@ func NewForConfigOrDie(c *rest.Config) *MonitoringV1Client {
 	return client
 }
 
-// New creates a new MonitoringV1Client for the given RESTClient.
-func New(c rest.Interface) *MonitoringV1Client {
-	return &MonitoringV1Client{c}
+// New creates a new ObservabilityV1Client for the given RESTClient.
+func New(c rest.Interface) *ObservabilityV1Client {
+	return &ObservabilityV1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -127,7 +127,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *MonitoringV1Client) RESTClient() rest.Interface {
+func (c *ObservabilityV1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

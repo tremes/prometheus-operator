@@ -17,22 +17,22 @@
 package fake
 
 import (
-	v1beta1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1"
+	v1beta1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
 
-type FakeMonitoringV1beta1 struct {
+type FakeObservabilityV1beta1 struct {
 	*testing.Fake
 }
 
-func (c *FakeMonitoringV1beta1) AlertmanagerConfigs(namespace string) v1beta1.AlertmanagerConfigInterface {
+func (c *FakeObservabilityV1beta1) AlertmanagerConfigs(namespace string) v1beta1.AlertmanagerConfigInterface {
 	return &FakeAlertmanagerConfigs{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *FakeMonitoringV1beta1) RESTClient() rest.Interface {
+func (c *FakeObservabilityV1beta1) RESTClient() rest.Interface {
 	var ret *rest.RESTClient
 	return ret
 }

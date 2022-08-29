@@ -20,10 +20,10 @@ import (
 	"context"
 	time "time"
 
-	monitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
-	internalinterfaces "github.com/prometheus-operator/prometheus-operator/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/client/listers/monitoring/v1alpha1"
-	versioned "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned"
+	monitoringv1alpha1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1alpha1"
+	internalinterfaces "github.com/tremes/prometheus-operator/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/tremes/prometheus-operator/pkg/client/listers/monitoring/v1alpha1"
+	versioned "github.com/tremes/prometheus-operator/pkg/client/versioned"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -60,13 +60,13 @@ func NewFilteredAlertmanagerConfigInformer(client versioned.Interface, namespace
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.MonitoringV1alpha1().AlertmanagerConfigs(namespace).List(context.TODO(), options)
+				return client.ObservabilityV1alpha1().AlertmanagerConfigs(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.MonitoringV1alpha1().AlertmanagerConfigs(namespace).Watch(context.TODO(), options)
+				return client.ObservabilityV1alpha1().AlertmanagerConfigs(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&monitoringv1alpha1.AlertmanagerConfig{},

@@ -19,29 +19,29 @@ package v1alpha1
 import (
 	"net/http"
 
-	v1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
-	"github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/scheme"
+	v1alpha1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1alpha1"
+	"github.com/tremes/prometheus-operator/pkg/client/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
-type MonitoringV1alpha1Interface interface {
+type ObservabilityV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AlertmanagerConfigsGetter
 }
 
-// MonitoringV1alpha1Client is used to interact with features provided by the monitoring.coreos.com group.
-type MonitoringV1alpha1Client struct {
+// ObservabilityV1alpha1Client is used to interact with features provided by the observability.redhat.com group.
+type ObservabilityV1alpha1Client struct {
 	restClient rest.Interface
 }
 
-func (c *MonitoringV1alpha1Client) AlertmanagerConfigs(namespace string) AlertmanagerConfigInterface {
+func (c *ObservabilityV1alpha1Client) AlertmanagerConfigs(namespace string) AlertmanagerConfigInterface {
 	return newAlertmanagerConfigs(c, namespace)
 }
 
-// NewForConfig creates a new MonitoringV1alpha1Client for the given config.
+// NewForConfig creates a new ObservabilityV1alpha1Client for the given config.
 // NewForConfig is equivalent to NewForConfigAndClient(c, httpClient),
 // where httpClient was generated with rest.HTTPClientFor(c).
-func NewForConfig(c *rest.Config) (*MonitoringV1alpha1Client, error) {
+func NewForConfig(c *rest.Config) (*ObservabilityV1alpha1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -53,9 +53,9 @@ func NewForConfig(c *rest.Config) (*MonitoringV1alpha1Client, error) {
 	return NewForConfigAndClient(&config, httpClient)
 }
 
-// NewForConfigAndClient creates a new MonitoringV1alpha1Client for the given config and http client.
+// NewForConfigAndClient creates a new ObservabilityV1alpha1Client for the given config and http client.
 // Note the http client provided takes precedence over the configured transport values.
-func NewForConfigAndClient(c *rest.Config, h *http.Client) (*MonitoringV1alpha1Client, error) {
+func NewForConfigAndClient(c *rest.Config, h *http.Client) (*ObservabilityV1alpha1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -64,12 +64,12 @@ func NewForConfigAndClient(c *rest.Config, h *http.Client) (*MonitoringV1alpha1C
 	if err != nil {
 		return nil, err
 	}
-	return &MonitoringV1alpha1Client{client}, nil
+	return &ObservabilityV1alpha1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new MonitoringV1alpha1Client for the given config and
+// NewForConfigOrDie creates a new ObservabilityV1alpha1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *MonitoringV1alpha1Client {
+func NewForConfigOrDie(c *rest.Config) *ObservabilityV1alpha1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -77,9 +77,9 @@ func NewForConfigOrDie(c *rest.Config) *MonitoringV1alpha1Client {
 	return client
 }
 
-// New creates a new MonitoringV1alpha1Client for the given RESTClient.
-func New(c rest.Interface) *MonitoringV1alpha1Client {
-	return &MonitoringV1alpha1Client{c}
+// New creates a new ObservabilityV1alpha1Client for the given RESTClient.
+func New(c rest.Interface) *ObservabilityV1alpha1Client {
+	return &ObservabilityV1alpha1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -97,7 +97,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *MonitoringV1alpha1Client) RESTClient() rest.Interface {
+func (c *ObservabilityV1alpha1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

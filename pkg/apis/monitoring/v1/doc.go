@@ -13,6 +13,6 @@
 // limitations under the License.
 
 // +k8s:deepcopy-gen=package
-// +groupName=monitoring.coreos.com
+// +groupName=observability.redhat.com
 
 package v1

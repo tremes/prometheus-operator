@@ -37,9 +37,9 @@ import (
 	"github.com/prometheus/common/version"
 	"golang.org/x/sync/errgroup"
 
-	logging "github.com/prometheus-operator/prometheus-operator/internal/log"
-	"github.com/prometheus-operator/prometheus-operator/pkg/admission"
-	"github.com/prometheus-operator/prometheus-operator/pkg/server"
+	logging "github.com/tremes/prometheus-operator/internal/log"
+	"github.com/tremes/prometheus-operator/pkg/admission"
+	"github.com/tremes/prometheus-operator/pkg/server"
 )
 
 const (

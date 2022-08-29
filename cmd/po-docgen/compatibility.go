@@ -15,7 +15,7 @@
 package main
 
 import (
-	"github.com/prometheus-operator/prometheus-operator/pkg/operator"
+	"github.com/tremes/prometheus-operator/pkg/operator"
 )
 
 type compatibilityMatrix struct {

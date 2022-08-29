@@ -68,7 +68,7 @@ function(params) {
     },
     rules: [
       {
-        apiGroups: ['monitoring.coreos.com'],
+        apiGroups: ['observability.redhat.com'],
         resources: [
           'alertmanagers',
           'alertmanagers/finalizers',
@@ -210,7 +210,7 @@ function(params) {
   },
 
   serviceMonitor: {
-    apiVersion: 'monitoring.coreos.com/v1',
+    apiVersion: 'observability.redhat.com/v1',
     kind: 'ServiceMonitor',
     metadata: {
       name: 'prometheus-operator',

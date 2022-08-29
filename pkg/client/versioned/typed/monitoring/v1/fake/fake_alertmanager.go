@@ -19,7 +19,7 @@ package fake
 import (
 	"context"
 
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
+	monitoringv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -30,13 +30,13 @@ import (
 
 // FakeAlertmanagers implements AlertmanagerInterface
 type FakeAlertmanagers struct {
-	Fake *FakeMonitoringV1
+	Fake *FakeObservabilityV1
 	ns   string
 }
 
-var alertmanagersResource = schema.GroupVersionResource{Group: "monitoring.coreos.com", Version: "v1", Resource: "alertmanagers"}
+var alertmanagersResource = schema.GroupVersionResource{Group: "observability.redhat.com", Version: "v1", Resource: "alertmanagers"}
 
-var alertmanagersKind = schema.GroupVersionKind{Group: "monitoring.coreos.com", Version: "v1", Kind: "Alertmanager"}
+var alertmanagersKind = schema.GroupVersionKind{Group: "observability.redhat.com", Version: "v1", Kind: "Alertmanager"}
 
 // Get takes name of the alertmanager, and returns the corresponding alertmanager object, and an error if there is any.
 func (c *FakeAlertmanagers) Get(ctx context.Context, name string, options v1.GetOptions) (result *monitoringv1.Alertmanager, err error) {

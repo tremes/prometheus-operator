@@ -20,8 +20,8 @@ import (
 	"context"
 	"time"
 
-	v1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	scheme "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/scheme"
+	v1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	scheme "github.com/tremes/prometheus-operator/pkg/client/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
@@ -55,7 +55,7 @@ type thanosRulers struct {
 }
 
 // newThanosRulers returns a ThanosRulers
-func newThanosRulers(c *MonitoringV1Client, namespace string) *thanosRulers {
+func newThanosRulers(c *ObservabilityV1Client, namespace string) *thanosRulers {
 	return &thanosRulers{
 		client: c.RESTClient(),
 		ns:     namespace,

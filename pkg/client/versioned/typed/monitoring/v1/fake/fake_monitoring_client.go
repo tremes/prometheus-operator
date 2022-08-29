@@ -17,46 +17,46 @@
 package fake
 
 import (
-	v1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1"
+	v1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
 
-type FakeMonitoringV1 struct {
+type FakeObservabilityV1 struct {
 	*testing.Fake
 }
 
-func (c *FakeMonitoringV1) Alertmanagers(namespace string) v1.AlertmanagerInterface {
+func (c *FakeObservabilityV1) Alertmanagers(namespace string) v1.AlertmanagerInterface {
 	return &FakeAlertmanagers{c, namespace}
 }
 
-func (c *FakeMonitoringV1) PodMonitors(namespace string) v1.PodMonitorInterface {
+func (c *FakeObservabilityV1) PodMonitors(namespace string) v1.PodMonitorInterface {
 	return &FakePodMonitors{c, namespace}
 }
 
-func (c *FakeMonitoringV1) Probes(namespace string) v1.ProbeInterface {
+func (c *FakeObservabilityV1) Probes(namespace string) v1.ProbeInterface {
 	return &FakeProbes{c, namespace}
 }
 
-func (c *FakeMonitoringV1) Prometheuses(namespace string) v1.PrometheusInterface {
+func (c *FakeObservabilityV1) Prometheuses(namespace string) v1.PrometheusInterface {
 	return &FakePrometheuses{c, namespace}
 }
 
-func (c *FakeMonitoringV1) PrometheusRules(namespace string) v1.PrometheusRuleInterface {
+func (c *FakeObservabilityV1) PrometheusRules(namespace string) v1.PrometheusRuleInterface {
 	return &FakePrometheusRules{c, namespace}
 }
 
-func (c *FakeMonitoringV1) ServiceMonitors(namespace string) v1.ServiceMonitorInterface {
+func (c *FakeObservabilityV1) ServiceMonitors(namespace string) v1.ServiceMonitorInterface {
 	return &FakeServiceMonitors{c, namespace}
 }
 
-func (c *FakeMonitoringV1) ThanosRulers(namespace string) v1.ThanosRulerInterface {
+func (c *FakeObservabilityV1) ThanosRulers(namespace string) v1.ThanosRulerInterface {
 	return &FakeThanosRulers{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *FakeMonitoringV1) RESTClient() rest.Interface {
+func (c *FakeObservabilityV1) RESTClient() rest.Interface {
 	var ret *rest.RESTClient
 	return ret
 }

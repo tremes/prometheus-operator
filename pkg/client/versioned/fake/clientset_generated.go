@@ -17,13 +17,13 @@
 package fake
 
 import (
-	clientset "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned"
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1"
-	fakemonitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1/fake"
-	monitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1alpha1"
-	fakemonitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1alpha1/fake"
-	monitoringv1beta1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1"
-	fakemonitoringv1beta1 "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1/fake"
+	clientset "github.com/tremes/prometheus-operator/pkg/client/versioned"
+	observabilityv1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1"
+	fakeobservabilityv1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1/fake"
+	observabilityv1alpha1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1alpha1"
+	fakeobservabilityv1alpha1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1alpha1/fake"
+	observabilityv1beta1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1"
+	fakeobservabilityv1beta1 "github.com/tremes/prometheus-operator/pkg/client/versioned/typed/monitoring/v1beta1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -81,17 +81,17 @@ var (
 	_ testing.FakeClient  = &Clientset{}
 )
 
-// MonitoringV1 retrieves the MonitoringV1Client
-func (c *Clientset) MonitoringV1() monitoringv1.MonitoringV1Interface {
-	return &fakemonitoringv1.FakeMonitoringV1{Fake: &c.Fake}
+// ObservabilityV1 retrieves the ObservabilityV1Client
+func (c *Clientset) ObservabilityV1() observabilityv1.ObservabilityV1Interface {
+	return &fakeobservabilityv1.FakeObservabilityV1{Fake: &c.Fake}
 }
 
-// MonitoringV1alpha1 retrieves the MonitoringV1alpha1Client
-func (c *Clientset) MonitoringV1alpha1() monitoringv1alpha1.MonitoringV1alpha1Interface {
-	return &fakemonitoringv1alpha1.FakeMonitoringV1alpha1{Fake: &c.Fake}
+// ObservabilityV1alpha1 retrieves the ObservabilityV1alpha1Client
+func (c *Clientset) ObservabilityV1alpha1() observabilityv1alpha1.ObservabilityV1alpha1Interface {
+	return &fakeobservabilityv1alpha1.FakeObservabilityV1alpha1{Fake: &c.Fake}
 }
 
-// MonitoringV1beta1 retrieves the MonitoringV1beta1Client
-func (c *Clientset) MonitoringV1beta1() monitoringv1beta1.MonitoringV1beta1Interface {
-	return &fakemonitoringv1beta1.FakeMonitoringV1beta1{Fake: &c.Fake}
+// ObservabilityV1beta1 retrieves the ObservabilityV1beta1Client
+func (c *Clientset) ObservabilityV1beta1() observabilityv1beta1.ObservabilityV1beta1Interface {
+	return &fakeobservabilityv1beta1.FakeObservabilityV1beta1{Fake: &c.Fake}
 }

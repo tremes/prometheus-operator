@@ -13,31 +13,31 @@ toc: true
 <p>Packages:</p>
 <ul>
 <li>
-<a href="#monitoring.coreos.com%2fv1">monitoring.coreos.com/v1</a>
+<a href="#observability.redhat.com%2fv1">observability.redhat.com/v1</a>
 </li>
 <li>
-<a href="#monitoring.coreos.com%2fv1alpha1">monitoring.coreos.com/v1alpha1</a>
+<a href="#observability.redhat.com%2fv1alpha1">observability.redhat.com/v1alpha1</a>
 </li>
 <li>
-<a href="#monitoring.coreos.com%2fv1beta1">monitoring.coreos.com/v1beta1</a>
+<a href="#observability.redhat.com%2fv1beta1">observability.redhat.com/v1beta1</a>
 </li>
 </ul>
-<h2 id="monitoring.coreos.com/v1">monitoring.coreos.com/v1</h2>
+<h2 id="observability.redhat.com/v1">observability.redhat.com/v1</h2>
 Resource Types:
 <ul><li>
-<a href="#monitoring.coreos.com/v1.Alertmanager">Alertmanager</a>
+<a href="#observability.redhat.com/v1.Alertmanager">Alertmanager</a>
 </li><li>
-<a href="#monitoring.coreos.com/v1.PodMonitor">PodMonitor</a>
+<a href="#observability.redhat.com/v1.PodMonitor">PodMonitor</a>
 </li><li>
-<a href="#monitoring.coreos.com/v1.Probe">Probe</a>
+<a href="#observability.redhat.com/v1.Probe">Probe</a>
 </li><li>
-<a href="#monitoring.coreos.com/v1.Prometheus">Prometheus</a>
+<a href="#observability.redhat.com/v1.Prometheus">Prometheus</a>
 </li><li>
-<a href="#monitoring.coreos.com/v1.PrometheusRule">PrometheusRule</a>
+<a href="#observability.redhat.com/v1.PrometheusRule">PrometheusRule</a>
 </li><li>
-<a href="#monitoring.coreos.com/v1.ServiceMonitor">ServiceMonitor</a>
+<a href="#observability.redhat.com/v1.ServiceMonitor">ServiceMonitor</a>
 </li></ul>
-<h3 id="monitoring.coreos.com/v1.Alertmanager">Alertmanager
+<h3 id="observability.redhat.com/v1.Alertmanager">Alertmanager
 </h3>
 <div>
 <p>Alertmanager describes an Alertmanager cluster.</p>
@@ -56,7 +56,7 @@ Resource Types:
 string</td>
 <td>
 <code>
-monitoring.coreos.com/v1
+observability.redhat.com/v1
 </code>
 </td>
 </tr>
@@ -85,7 +85,7 @@ Refer to the Kubernetes API documentation for the fields of the
 <td>
 <code>spec</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.AlertmanagerSpec">
+<a href="#observability.redhat.com/v1.AlertmanagerSpec">
 AlertmanagerSpec
 </a>
 </em>
@@ -100,7 +100,7 @@ AlertmanagerSpec
 <td>
 <code>podMetadata</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.EmbeddedObjectMetadata">
+<a href="#observability.redhat.com/v1.EmbeddedObjectMetadata">
 EmbeddedObjectMetadata
 </a>
 </em>
@@ -274,7 +274,7 @@ size.</p>
 <td>
 <code>retention</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.GoDuration">
+<a href="#observability.redhat.com/v1.GoDuration">
 GoDuration
 </a>
 </em>
@@ -288,7 +288,7 @@ and must match the regular expression <code>[0-9]+(ms|s|m|h)</code> (millisecond
 <td>
 <code>storage</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.StorageSpec">
+<a href="#observability.redhat.com/v1.StorageSpec">
 StorageSpec
 </a>
 </em>
@@ -546,7 +546,7 @@ Needs to be provided for non RFC1918 <a href="public">1</a> addresses.
 <td>
 <code>clusterGossipInterval</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.GoDuration">
+<a href="#observability.redhat.com/v1.GoDuration">
 GoDuration
 </a>
 </em>
@@ -559,7 +559,7 @@ GoDuration
 <td>
 <code>clusterPushpullInterval</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.GoDuration">
+<a href="#observability.redhat.com/v1.GoDuration">
 GoDuration
 </a>
 </em>
@@ -572,7 +572,7 @@ GoDuration
 <td>
 <code>clusterPeerTimeout</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.GoDuration">
+<a href="#observability.redhat.com/v1.GoDuration">
 GoDuration
 </a>
 </em>
@@ -651,7 +651,7 @@ This is an alpha field and requires enabling StatefulSetMinReadySeconds feature 
 <td>
 <code>hostAliases</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.HostAlias">
+<a href="#observability.redhat.com/v1.HostAlias">
 []HostAlias
 </a>
 </em>
@@ -664,7 +664,7 @@ This is an alpha field and requires enabling StatefulSetMinReadySeconds feature 
 <td>
 <code>web</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.AlertmanagerWebSpec">
+<a href="#observability.redhat.com/v1.AlertmanagerWebSpec">
 AlertmanagerWebSpec
 </a>
 </em>
@@ -677,7 +677,7 @@ AlertmanagerWebSpec
 <td>
 <code>alertmanagerConfiguration</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.AlertmanagerConfiguration">
+<a href="#observability.redhat.com/v1.AlertmanagerConfiguration">
 AlertmanagerConfiguration
 </a>
 </em>
@@ -695,7 +695,7 @@ This field may change in future releases.</p>
 <td>
 <code>status</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.AlertmanagerStatus">
+<a href="#observability.redhat.com/v1.AlertmanagerStatus">
 AlertmanagerStatus
 </a>
 </em>
@@ -709,7 +709,7 @@ Operator API itself. More info:
 </tr>
 </tbody>
 </table>
-<h3 id="monitoring.coreos.com/v1.PodMonitor">PodMonitor
+<h3 id="observability.redhat.com/v1.PodMonitor">PodMonitor
 </h3>
 <div>
 <p>PodMonitor defines monitoring for a set of pods.</p>
@@ -728,7 +728,7 @@ Operator API itself. More info:
 string</td>
 <td>
 <code>
-monitoring.coreos.com/v1
+observability.redhat.com/v1
 </code>
 </td>
 </tr>
@@ -757,7 +757,7 @@ Refer to the Kubernetes API documentation for the fields of the
 <td>
 <code>spec</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.PodMonitorSpec">
+<a href="#observability.redhat.com/v1.PodMonitorSpec">
 PodMonitorSpec
 </a>
 </em>
@@ -793,7 +793,7 @@ string
 <td>
 <code>podMetricsEndpoints</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.PodMetricsEndpoint">
+<a href="#observability.redhat.com/v1.PodMetricsEndpoint">
 []PodMetricsEndpoint
 </a>
 </em>
@@ -819,7 +819,7 @@ Kubernetes meta/v1.LabelSelector
 <td>
 <code>namespaceSelector</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.NamespaceSelector">
+<a href="#observability.redhat.com/v1.NamespaceSelector">
 NamespaceSelector
 </a>
 </em>
@@ -890,7 +890,7 @@ Only valid in Prometheus versions 2.27.0 and newer.</p>
 <td>
 <code>attachMetadata</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.AttachMetadata">
+<a href="#observability.redhat.com/v1.AttachMetadata">
 AttachMetadata
 </a>
 </em>
@@ -905,7 +905,7 @@ Only valid in Prometheus versions 2.35.0 and newer.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="monitoring.coreos.com/v1.Probe">Probe
+<h3 id="observability.redhat.com/v1.Probe">Probe
 </h3>
 <div>
 <p>Probe defines monitoring for a set of static targets or ingresses.</p>
@@ -924,7 +924,7 @@ Only valid in Prometheus versions 2.35.0 and newer.</p>
 string</td>
 <td>
 <code>
-monitoring.coreos.com/v1
+observability.redhat.com/v1
 </code>
 </td>
 </tr>
@@ -953,7 +953,7 @@ Refer to the Kubernetes API documentation for the fields of the
 <td>
 <code>spec</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ProbeSpec">
+<a href="#observability.redhat.com/v1.ProbeSpec">
 ProbeSpec
 </a>
 </em>
@@ -978,7 +978,7 @@ string
 <td>
 <code>prober</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ProberSpec">
+<a href="#observability.redhat.com/v1.ProberSpec">
 ProberSpec
 </a>
 </em>
@@ -1005,7 +1005,7 @@ Example module configuring in the blackbox exporter:
 <td>
 <code>targets</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ProbeTargets">
+<a href="#observability.redhat.com/v1.ProbeTargets">
 ProbeTargets
 </a>
 </em>
@@ -1018,7 +1018,7 @@ ProbeTargets
 <td>
 <code>interval</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.Duration">
+<a href="#observability.redhat.com/v1.Duration">
 Duration
 </a>
 </em>
@@ -1032,7 +1032,7 @@ If not specified Prometheus&rsquo; global scrape interval is used.</p>
 <td>
 <code>scrapeTimeout</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.Duration">
+<a href="#observability.redhat.com/v1.Duration">
 Duration
 </a>
 </em>
@@ -1046,7 +1046,7 @@ If not specified, the Prometheus global scrape interval is used.</p>
 <td>
 <code>tlsConfig</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ProbeTLSConfig">
+<a href="#observability.redhat.com/v1.ProbeTLSConfig">
 ProbeTLSConfig
 </a>
 </em>
@@ -1074,7 +1074,7 @@ the Prometheus Operator.</p>
 <td>
 <code>basicAuth</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.BasicAuth">
+<a href="#observability.redhat.com/v1.BasicAuth">
 BasicAuth
 </a>
 </em>
@@ -1088,7 +1088,7 @@ More info: <a href="https://prometheus.io/docs/operating/configuration/#endpoint
 <td>
 <code>oauth2</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.OAuth2">
+<a href="#observability.redhat.com/v1.OAuth2">
 OAuth2
 </a>
 </em>
@@ -1101,7 +1101,7 @@ OAuth2
 <td>
 <code>metricRelabelings</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.RelabelConfig">
+<a href="#observability.redhat.com/v1.RelabelConfig">
 []RelabelConfig
 </a>
 </em>
@@ -1114,7 +1114,7 @@ OAuth2
 <td>
 <code>authorization</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.SafeAuthorization">
+<a href="#observability.redhat.com/v1.SafeAuthorization">
 SafeAuthorization
 </a>
 </em>
@@ -1186,7 +1186,7 @@ Only valid in Prometheus versions 2.27.0 and newer.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="monitoring.coreos.com/v1.Prometheus">Prometheus
+<h3 id="observability.redhat.com/v1.Prometheus">Prometheus
 </h3>
 <div>
 <p>Prometheus defines a Prometheus deployment.</p>
@@ -1205,7 +1205,7 @@ Only valid in Prometheus versions 2.27.0 and newer.</p>
 string</td>
 <td>
 <code>
-monitoring.coreos.com/v1
+observability.redhat.com/v1
 </code>
 </td>
 </tr>
@@ -1234,7 +1234,7 @@ Refer to the Kubernetes API documentation for the fields of the
 <td>
 <code>spec</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.PrometheusSpec">
+<a href="#observability.redhat.com/v1.PrometheusSpec">
 PrometheusSpec
 </a>
 </em>
@@ -1249,7 +1249,7 @@ PrometheusSpec
 <td>
 <code>podMetadata</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.EmbeddedObjectMetadata">
+<a href="#observability.redhat.com/v1.EmbeddedObjectMetadata">
 EmbeddedObjectMetadata
 </a>
 </em>
@@ -1477,7 +1477,7 @@ string
 <td>
 <code>scrapeInterval</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.Duration">
+<a href="#observability.redhat.com/v1.Duration">
 Duration
 </a>
 </em>
@@ -1490,7 +1490,7 @@ Duration
 <td>
 <code>scrapeTimeout</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.Duration">
+<a href="#observability.redhat.com/v1.Duration">
 Duration
 </a>
 </em>
@@ -1574,7 +1574,7 @@ under a different route prefix. For example for use with <code>kubectl proxy</co
 <td>
 <code>storage</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.StorageSpec">
+<a href="#observability.redhat.com/v1.StorageSpec">
 StorageSpec
 </a>
 </em>
@@ -1616,7 +1616,7 @@ that are generated as a result of StorageSpec objects.</p>
 <td>
 <code>web</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.PrometheusWebSpec">
+<a href="#observability.redhat.com/v1.PrometheusWebSpec">
 PrometheusWebSpec
 </a>
 </em>
@@ -1730,7 +1730,7 @@ Kubernetes core/v1.Affinity
 <td>
 <code>remoteWrite</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.RemoteWriteSpec">
+<a href="#observability.redhat.com/v1.RemoteWriteSpec">
 []RemoteWriteSpec
 </a>
 </em>
@@ -1835,7 +1835,7 @@ Prometheus after the upgrade.</p>
 <td>
 <code>apiserverConfig</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.APIServerConfig">
+<a href="#observability.redhat.com/v1.APIServerConfig">
 APIServerConfig
 </a>
 </em>
@@ -1874,7 +1874,7 @@ This defaults to web</p>
 <td>
 <code>arbitraryFSAccessThroughSMs</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ArbitraryFSAccessThroughSMsConfig">
+<a href="#observability.redhat.com/v1.ArbitraryFSAccessThroughSMsConfig">
 ArbitraryFSAccessThroughSMsConfig
 </a>
 </em>
@@ -2027,7 +2027,7 @@ Only valid in Prometheus versions 2.27.0 and newer.</p>
 <td>
 <code>enforcedBodySizeLimit</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.ByteSize">
+<a href="#observability.redhat.com/v1.ByteSize">
 ByteSize
 </a>
 </em>
@@ -2061,7 +2061,7 @@ This is an alpha field and requires enabling StatefulSetMinReadySeconds feature 
 <td>
 <code>hostAliases</code><br/>
 <em>
-<a href="#monitoring.coreos.com/v1.HostAlias">
+<a href="#observability.redhat.com/v1.HostAlias">
 []HostAlias
 </a>
 </em>

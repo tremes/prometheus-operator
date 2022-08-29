@@ -1,9 +1,9 @@
-module github.com/prometheus-operator/prometheus-operator/pkg/client
+module github.com/tremes/prometheus-operator/pkg/client
 
 go 1.17
 
 require (
-	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.58.0
+	github.com/tremes/prometheus-operator/pkg/apis/monitoring v0.58.0
 	k8s.io/apimachinery v0.24.3
 	k8s.io/client-go v0.24.3
 )

@@ -17,9 +17,9 @@
 package fake
 
 import (
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	monitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
-	monitoringv1beta1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1beta1"
+	observabilityv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	observabilityv1alpha1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1alpha1"
+	observabilityv1beta1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -31,9 +31,9 @@ var scheme = runtime.NewScheme()
 var codecs = serializer.NewCodecFactory(scheme)
 
 var localSchemeBuilder = runtime.SchemeBuilder{
-	monitoringv1.AddToScheme,
-	monitoringv1alpha1.AddToScheme,
-	monitoringv1beta1.AddToScheme,
+	observabilityv1.AddToScheme,
+	observabilityv1alpha1.AddToScheme,
+	observabilityv1beta1.AddToScheme,
 }
 
 // AddToScheme adds all types of this clientset into the given scheme. This allows composition

@@ -22,12 +22,12 @@ import (
 	"time"
 
 	"github.com/mitchellh/hashstructure"
-	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
-	monitoringclient "github.com/prometheus-operator/prometheus-operator/pkg/client/versioned"
-	"github.com/prometheus-operator/prometheus-operator/pkg/informers"
-	"github.com/prometheus-operator/prometheus-operator/pkg/k8sutil"
-	"github.com/prometheus-operator/prometheus-operator/pkg/listwatch"
-	"github.com/prometheus-operator/prometheus-operator/pkg/operator"
+	monitoringv1 "github.com/tremes/prometheus-operator/pkg/apis/monitoring/v1"
+	monitoringclient "github.com/tremes/prometheus-operator/pkg/client/versioned"
+	"github.com/tremes/prometheus-operator/pkg/informers"
+	"github.com/tremes/prometheus-operator/pkg/k8sutil"
+	"github.com/tremes/prometheus-operator/pkg/listwatch"
+	"github.com/tremes/prometheus-operator/pkg/operator"
 
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
